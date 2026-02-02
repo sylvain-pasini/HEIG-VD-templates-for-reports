@@ -1,5 +1,5 @@
 #import "glossary.typ": *
-#import "template/main.typ": *
+#import "../../template/main.typ": *
 
 #show: TB_template.with(
   config: (

@@ -1,72 +1,68 @@
-/*
- Vars
-*/
-#import "vars.typ": *
+#import "glossary.typ": *
+#import "template/main.typ": *
 
-#set text(lang: language)
+#show: TB_template.with(
+  config: (
+    global: (
+      confidential: true,
+      research_report: false,
+      text_lang: "fr"
+    ),
+    information: (
+      title: "Titre du TB",
+      subtitle: "Sous-titre",
+      academic_years: "2024-25",
+      dpt: "Département des Technologie de l'information et de la communication (TIC)",
+      filiere: (
+        short: "ISC",
+        long: "Informatique et systèmes de communication",
+      ),
+      orientation: "Sécurité informatique",
+      author: (
+        name: "firstname lastname",
+        feminine_form: true,
+      ),
+      supervisor: (
+        name: "Prof. Bli Bla",
+        feminine_form: true,
+      ),
+      industry_contact: (
+        name: "Nom",
+        address: [
+          Rue XY\
+          1400 Yverdon-les-Bains
+        ],
+        industry_name: "EntrepriseZ",
+      ),
+      resume_publiable: [
+        Dans ce travail... Ceci est le résumé publiable...
+      ]
+    ),
+    sections: (
+      thanks: include "chapters/thanks.typ",
+      cdc: include "chapters/cdc.typ",
+      annexes: include "chapters/annexes.typ"
+    ),
+    bibliography: (
+      content: read("bibliography.bib", encoding: none),
+      style: "iso-690-author-date"
+    ),
+    codly: (
+      enabled: true
+    ),
+    glossary: (
+      enabled: true,
+      entries: entry-list
+    )
+  )
+)
 
-/*
- Includes
-*/
-#import "template/macros.typ": *
-
-#import "template/style.typ": TBStyle
-#show: TBStyle.with(TBauthor, confidential)
-
-/*
- Title and template
-*/
-#import "template/_title.typ": *
-#_title(TBtitle, TBsubtitle, TBacademicYears, TBdpt, TBfiliere, TBorient, TBauthor, TBfeminineForm, TBsupervisor, TBsupervisorFeminineForm, TBindustryContact, TBindustryName, TBindustryAddress, confidential)
-#import "template/_second_title.typ": *
-#_second_title(TBtitle, TBacademicYears, TBdpt, TBfiliere, TBorient, TBauthor, TBfeminineForm, TBsupervisor, TBsupervisorFeminineForm, TBindustryName, TBresumePubliable)
-#include "template/_preambule.typ"
-#import "template/_authentification.typ": *
-#_authentification(TBauthor, TBfeminineForm)
-
-/*
- Cahier des charges
-*/
-#include "chapters/cdc.typ"
-
-// Set numbering for content
-#set heading(numbering: "1.1")
-
-/*
- Table of Content
-*/
-#outline(title: "Table des matières", depth: 3, indent: 15pt)
-
-/*
- Content
-*/
 #include "chapters/introduction.typ"
 
 #include "chapters/planification.typ"
 
 #include "chapters/etat-de-lart.typ"
-
-//#include "chapters/ch_exemple.typ"
-
 #include "chapters/architecture.typ"
-
 #include "chapters/implementation.typ"
 
 #include "chapters/conclusion.typ"
-
-// Remove numbering after content
-#set heading(numbering: none)
-
-/*
- Tables
-*/
-#include "template/_bibliography.typ"
-#include "template/_figures.typ"
-#include "template/_tables.typ"
-
-/*
- Annexes
-*/
-#include "chapters/outils.typ"
-
-#include "chapters/journal-de-travail.typ"

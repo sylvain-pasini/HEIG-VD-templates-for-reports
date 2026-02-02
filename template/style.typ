@@ -1,6 +1,7 @@
 #import "macros.typ": *
+#import "imports.typ": *
 
-#let TBStyle(TBauthor, confidential, body) = {
+#let TB_style(config, body) = {
   set heading(numbering: none)
 
   // Move all 1 level headings to new odd page
@@ -13,7 +14,6 @@
     \
   ]
 
-  // TODO find a way to apply this only to the main outline not the figures and the tables one
   show outline.entry.where(
     level: 1
   ): it => {
@@ -26,8 +26,8 @@
     strong(it)
   }
 
-  let confidentialText = [
-    #if confidential{
+  let confidential_text = [
+    #if config.global.confidential{
       [*Confidentiel*]
     }
   ]
@@ -42,13 +42,13 @@
           columns(2, [
             #align(left)[#smallcaps([#currentH()])]
             #colbreak()
-            #align(right)[#confidentialText]
+            #align(right)[#confidential_text]
           ])
         } else {
           columns(2, [
-            #align(left)[#confidentialText]
+            #align(left)[#confidential_text]
             #colbreak()
-            #align(right)[#TBauthor]
+            #align(right)[#config.information.author.name]
           ])
         }
         hr()
@@ -73,12 +73,12 @@
 
   // LaTeX look and feel :)
   set text(font: "New Computer Modern")
-  show raw: set text(font: "New Computer Modern Mono")
   show heading: set block(above: 1.4em, below: 1em)
   
   show heading.where(level:1): set text(size: 25pt)
 
   set table.cell(breakable: false)
+  show figure: set block(breakable: true)
   
   show link: underline
 
@@ -87,6 +87,17 @@
     inset: 10pt,
     radius: 4pt,
   )
+  
+  // Glossarium
+  if config.glossary.enabled {
+    show: make-glossary
+  }
+
+  // Codly
+  if config.codly.enabled {
+    show: codly-init.with()
+    codly(languages: codly-languages)
+  }
 
   body
 }

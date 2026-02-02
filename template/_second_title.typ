@@ -1,29 +1,29 @@
 #import "macros.typ": *
 
-#let _second_title(TBtitle, TBacademicYears, TBdpt, TBfiliere, TBorient, TBauthor, TBfeminineForm, TBsupervisor, TBsupervisorFeminineForm, TBindustryName, TBresumePubliable) = {
+#let _second_title(config) = {
   set par(leading: 0.55em, spacing: 0.55em, justify: true)
   pagebreak(to: "odd")
   align(right)[
-    #TBdpt\
-    #TBfiliere\
-    #TBorient\
-    #if TBfeminineForm { "Étudiante" } else { "Étudiant" } : #TBauthor\
-    #if TBsupervisorFeminineForm { "Enseignante" } else { "Enseignant" } responsable : #TBsupervisor\
+    #config.information.dpt\
+    #config.information.filiere.long\
+    #config.information.orientation\
+    #if config.information.author.feminine_form { "Étudiante" } else { "Étudiant" } : #config.information.author.name\
+    #if config.information.supervisor.feminine_form { "Enseignante" } else { "Enseignant" } responsable : #config.information.supervisor.name\
   ]
 
   v(10%)
 
-  align(center)[Travail de Bachelor #TBacademicYears]
+  align(center)[Travail de Bachelor #config.information.academic_years]
   v(1%)
-  align(center)[#TBtitle]
+  align(center)[#config.information.title]
   v(1%)
   hr()
 
   v(5%)
   [
-    Nom de l’entreprise/institution\
+    Nom de l'entreprise/institution\
     #v(1%)
-    #TBindustryName
+    #config.information.industry_contact.industry_name
   ]
 
   v(3%)
@@ -31,7 +31,7 @@
   [
     *Résumé publiable*\
     #v(1%)
-    #TBresumePubliable
+    #config.information.resume_publiable
   ]
 
   v(5%)
@@ -41,8 +41,8 @@
     columns: (40%, 30%, 30%),
     row-gutter: 1em,
     align: bottom,
-    [#if TBfeminineForm { "Étudiante" } else { "Étudiant" } :], [Date et lieu :], [Signature :],
-    [#TBauthor], [#hr_dotted()], [#hr_dotted()]
+    [#if config.information.author.feminine_form { "Étudiante" } else { "Étudiant" } :], [Date et lieu :], [Signature :],
+    [#config.information.author.name], [#hr_dotted()], [#hr_dotted()]
   )
   v(2%)
   table(
@@ -50,8 +50,8 @@
     columns: (40%, 30%, 30%),
     row-gutter: 1em,
     align: bottom,
-    [#if TBsupervisorFeminineForm { "Enseignante" } else { "Enseignant" } responsable :], [Date et lieu :], [Signature :],
-    [#TBsupervisor], [#hr_dotted()], [#hr_dotted()]
+    [#if config.information.supervisor.feminine_form { "Enseignante" } else { "Enseignant" } responsable :], [Date et lieu :], [Signature :],
+    [#config.information.supervisor.name], [#hr_dotted()], [#hr_dotted()]
   )
   v(2%)
   table(
@@ -59,7 +59,7 @@
     columns: (40%, 30%, 30%),
     row-gutter: 1em,
     align: bottom,
-    [Nom de l’entreprise/institution :], [Date et lieu :], [Signature :],
-    [#TBindustryName], [#hr_dotted()], [#hr_dotted()]
+    [Nom de l'entreprise/institution :], [Date et lieu :], [Signature :],
+    [#config.information.industry_contact.industry_name], [#hr_dotted()], [#hr_dotted()]
   )
 }

@@ -1,18 +1,38 @@
 #let affiche(
   content, 
-  title: "", 
-  dpt: "", 
-  filiere_short: "", 
-  filiere_long: "", 
-  orientation: "", 
-  author: "", 
-  supervisor: "", 
-  industryContact: "", 
-  industryName: ""
+  config: (
+    global: (
+      confidential: false,
+      text_lang: "fr",
+    ),
+    information: (
+      title: "",
+      subtitle: "",
+      academic_years: "",
+      dpt: "",
+      filiere: (
+        short: "",
+        long: "",
+      ),
+      orientation: "",
+      author: (
+        name: "",
+        feminine_form: false,
+      ),
+      supervisor: (
+        name: "",
+      ),
+      industry_contact: (
+        name: "",
+        feminine_form: false,
+        industry_name: "",
+      ),
+    ),
+  )
   ) = {
   // Style
   set heading(numbering: none)
-  set text(font: "Arial", size: 14pt)
+  set text(font: "Arial", size: 14pt, lang: config.global.text_lang)
 
   show heading.where(
     level: 1
@@ -41,15 +61,15 @@
     image("images/logo_heig-vd-2020.svg", width: 30%),
     text(size: 24pt, [
       *Travail de Bachelor #datetime.today().display("[year]")* \
-      *Filière #filiere_short* \
-      *Orientation #orientation* \
+      *Filière #config.information.filiere.short* \
+      *Orientation #config.information.orientation* \
     ])
   )
   
   v(7%)
 
   // Title
-  align(center, par(justify: false, text(size: 54pt)[*#title*]))
+  align(center, par(justify: false, text(size: 54pt)[*#config.information.title*]))
 
   v(4%)
 
@@ -68,10 +88,10 @@
     columns: (50%, 50%), 
     align: (left + top, bottom + right),
     text(size: 12pt)[
-      Auteur: #author \
-      Répondant externe: #industryContact \
-      Prof. responsable: #supervisor \
-      Sujet proposé par: #industryName \
+      #if config.information.author.feminine_form { "Autrice" } else { "Auteur" }: #config.information.author.name \
+      #if config.information.industry_contact.feminine_form { "Répondante" } else { "Répondant" } externe: #config.information.industry_contact.name \
+      Prof. responsable: #config.information.supervisor.name \
+      Sujet proposé par: #config.information.industry_contact.industry_name \
     ],
     image("images/logo_hes-so.png", width: 25%)
   ))
@@ -80,6 +100,6 @@
 
   // Footer
   align(bottom + right, text(size: 12pt)[
-    *HEIG-VD #sym.copyright #datetime.today().display("[year]") filière #filiere_long*
+    *HEIG-VD #sym.copyright #datetime.today().display("[year]") filière #config.information.filiere.long*
   ])
 }

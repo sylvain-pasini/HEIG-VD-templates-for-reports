@@ -1,12 +1,12 @@
-#let _title(TBtitle, TBsubtitle, TBacademicYears, TBdpt, TBfiliere, TBorient, TBauthor,TBfeminineForm, TBsupervisor, TBsupervisorFeminineForm, TBindustryContact, TBindustryName, TBindustryAddress, confidential) = {
+#let _title(config) = {
   set par(leading: 0.55em, spacing: 0.55em, justify: true)
   columns(2, [
     #image("images/logo_heig-vd-2020.svg", width: 40%)
     #colbreak()
     #par(justify: false)[#align(right, [
-      #TBdpt
-      #TBfiliere
-      #TBorient
+      #config.information.dpt
+      #config.information.filiere.long
+      #config.information.orientation
     ])]
   ])
   
@@ -14,12 +14,12 @@
   
   align(center, [#text(size: 14pt, [*Travail de Bachelor*])])
   v(4%)
-  align(center, [#text(size: 20pt, [*#TBtitle*])])
+  align(center, [#text(size: 20pt, [*#config.information.title*])])
   v(1%)
-  align(center, [#text(size: 16pt, [#TBsubtitle])])
+  align(center, [#text(size: 16pt, [#config.information.subtitle])])
 
   v(8%)
-  if confidential{
+  if config.global.confidential{
     align(center, [#text(size: 14pt, [*Confidentiel*])])
   }else{
     v(14pt)
@@ -30,14 +30,14 @@
     #table(
       stroke: none,
       columns: (50%, 50%),
-      [*#if TBfeminineForm { "Étudiante" } else { "Étudiant" }*], [*#TBauthor*],
-      [*#if TBsupervisorFeminineForm { "Enseignante" } else { "Enseignant" } responsable*], [#TBsupervisor],
+      [*#if config.information.author.feminine_form { "Étudiante" } else { "Étudiant" }*], [*#config.information.author.name*],
+      [*#if config.information.supervisor.feminine_form { "Enseignante" } else { "Enseignant" } responsable*], [#config.information.supervisor.name],
       [*Entreprise mandante*], [
-        #TBindustryContact \
-        #TBindustryName \
-        #TBindustryAddress
+        #config.information.industry_contact.name \
+        #config.information.industry_contact.industry_name \
+        #config.information.industry_contact.address
       ],
-      [*Année académique*], [#TBacademicYears]
+      [*Année académique*], [#config.information.academic_years]
     )
   ])])
 

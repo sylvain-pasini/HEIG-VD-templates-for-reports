@@ -12,7 +12,7 @@
       title: "Titre du TB",
       subtitle: "Sous-titre",
       academic_years: "2024-25",
-      dpt: "Département des Technologie de l'information et de la communication (TIC)",
+      dpt: "Département des Technologies de l'information et de la communication (TIC)",
       filiere: (
         short: "ISC",
         long: "Informatique et systèmes de communication",

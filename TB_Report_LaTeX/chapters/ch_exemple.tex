@@ -53,12 +53,12 @@ Comme montre la Figure~\ref{fig:pgp}, on peut référencer une figure.
 
 Utiliser la commande \com{com}.
 
-Exemple : Test d'une commande bash shell \com{ls} : 
+Exemple : Test d'une commande bash shell \com{ls} :
 
 Utiliser l'environnement \com{shellcmd}.
 
 \begin{shellcmd}
-$> ls -al test_underscore $$* "coucou"
+	$> ls -al test_underscore $$* "coucou"
 \end{shellcmd}
 Bli bLa
 
@@ -70,14 +70,14 @@ Voici comment faire une mise en forme de commande SHELL.
 
 Utiliser l'environnement \com{listingsbox}.
 \begin{description}
- \item[1er paramètre:] le ype de shell, ici "console"
- \item[2ème paramètre:] le nom à donner à la box
+	\item[1er paramètre:] le ype de shell, ici "console"
+	\item[2ème paramètre:] le nom à donner à la box
 \end{description}
 
 \begin{listingsbox}{console}{Exemple de commande shell avec réponse}
-root@kali:~$ bunzip2 data-decrypted.bin
-bunzip2: Can't guess original name for data-decrypted.bin -- using
-data-decrypted.bin.out
+	root@kali:~$ bunzip2 data-decrypted.bin
+	bunzip2: Can't guess original name for data-decrypted.bin -- using
+	data-decrypted.bin.out
 \end{listingsbox}
 
 
@@ -85,18 +85,18 @@ data-decrypted.bin.out
 
 Utiliser l'environnement \com{sourcebox}.
 \begin{description}
- \item[1er paramètre:] le ype de shell, ici "c"
- \item[2ème paramètre:] le nom à donner à la box
+	\item[1er paramètre:] le ype de shell, ici "c"
+	\item[2ème paramètre:] le nom à donner à la box
 \end{description}
 
 \begin{sourcebox}{c}{Exemple de code C}
-#include <stdio.h>
+	#include <stdio.h>
 
-int main(int argc, char* argv[])
-{
-   printf("Hello World!\n");
-   return 0;
-}
+	int main(int argc, char* argv[])
+	{
+			printf("Hello World!\n");
+			return 0;
+		}
 \end{sourcebox}
 
 
@@ -105,9 +105,9 @@ int main(int argc, char* argv[])
 
 Utiliser la commande \com{inputsourcecode}.
 \begin{description}
- \item[1er paramètre:] le ype de shell, ici "c"
- \item[2ème paramètre:] le nom du fichier source, "\path{source_code/example.c}"\\ Egalement exemple de la commande \com{path}.
- \item[3ème paramètre:] le nom à donner à la box
+	\item[1er paramètre:] le ype de shell, ici "c"
+	\item[2ème paramètre:] le nom du fichier source, "\path{source_code/example.c}"\\ Egalement exemple de la commande \com{path}.
+	\item[3ème paramètre:] le nom à donner à la box
 \end{description}
 
 

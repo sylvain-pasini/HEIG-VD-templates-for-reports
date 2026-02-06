@@ -37,21 +37,6 @@ Pour installer Pygmentize sur macOS, suivre les étapes suivantes :
 - sudo ln -s "$(which pygmentize)" /Library/TeX/texbin/pygmentize
 
 
-
-### Historique de versions
-
-- [Sylvain Pasini] LaTeX v2.0 : mise à jour générale du template pour 2026
-- [Sylvain Pasini] LaTeX v1.3 : corrections mineures (filière, orientation), ajout planification, correction d'exemples, manuel pygmentize
-- [Alexandre Duc] LaTeX v1.2 : ajout d'une mention confidentiel dans chaque entête de page si le TB est confidentiel
-- [Alexandre Duc] LaTeX v1.1 : ajout de liens et d'entrées dans la ToC pour la liste des figures et la liste des tables
-- [Sylvain Pasini] LaTeX v1.0 : version initiale
-
-
 ## Template Typst
 
 En 2025, Christophe Roulin, alors étudiant Bachelor à la HEIG-VD, a créé une version **Typst** du template pour les rapports. Ce template s’inspire directement de la mise en forme et du contenu du template LaTeX original, conçu par le Prof. Sylvain Pasini, et offre une alternative moderne et simplifiée pour la rédaction scientifique.
-
-### Historique de versions
-
-- [Sergio Alves Domingues] Typst v2.0 : mise à jour générale du template pour 2026
-- [Christophe Roulin] Typst v1.3 : version initiale de 2025, en lien avec la version LaTeX 1.3.

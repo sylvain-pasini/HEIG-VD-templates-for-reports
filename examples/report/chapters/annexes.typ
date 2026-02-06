@@ -1,2 +1,0 @@
-= Annexes
-#lorem(100)

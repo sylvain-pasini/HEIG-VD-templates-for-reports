@@ -1,7 +1,0 @@
-[package]
-name = "HEIG-VD-TB-template"
-version = "0.1.0"
-entrypoint = "main.typ"
-authors = ["@DACC4", "https://heig-vd.ch/"]
-license = "Apache-2.0"
-description = "Bachelor thesis report and affiche at HEIG-VD"

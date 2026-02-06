@@ -1,0 +1,291 @@
+% +---------------------------------------------------------------+
+% | Author :    Sylvain Pasini, HEIG-VD
+% | Date :      February 6th, 2026
+% +---------------------------------------------------------------+
+
+
+
+% +---------------------------------------------------------------+
+% | Page de garde (NEW de 2026)
+% +---------------------------------------------------------------+
+\newcommand{\TBmaketitle}{
+	\thispagestyle{empty}
+
+	\includegraphics[width=6cm]{template/HEIG-VD_logotype-baseline_rouge-cmjn.pdf}
+
+	\vfill
+
+	\begin{center}        
+		{\large \bfseries \TBtype}
+    
+    	\vspace{0.8cm}
+    
+		% TITLE
+		{\Huge \bfseries \TBtitle}
+
+		% Subtitle
+		\ifthenelse{\isempty{\TBsubtitle}}%
+ 		{}%empty
+		{\Large \TBsubtitle}%not empty
+		
+		% Confidential ?
+		\ifisconfidential
+	    	\vspace{0.8cm}    
+	    	{\large \bfseries Confidentiel}
+	  	\else
+		\fi      
+	\end{center}
+		
+	\vfill
+    
+    \normalsize
+    \begin{tabular}{l@{\hskip 10mm}l}
+		% Etudiant
+    	\textbf{\TBauthor} & \textbf{\TBauthorData} \\[3mm]
+		% Supervieur
+	    \textbf{\TBsupervisor} & \TBsupervisorData \\[3mm]
+
+		% Faculté, département
+		\textbf{\TBdpt} & \TBdptData \\
+		\textbf{\TBfiliere} & \TBfiliereData \\
+		\textbf{\TBorient} & \TBorientData \\[3mm]
+
+		% Mandant
+		\ifthenelse{\isempty{\TBindustryName}}%
+    	{}%empty
+		{\textbf{\TBindustryType} & 
+		    \begin{minipage}[t]{8cm}%
+		    	\TBindustryContact\\
+				\TBindustryName\\
+				\TBindustryAddress\\
+			\end{minipage} \\[3mm]
+		}%not empty
+
+		% Année
+		\textbf{Année académique} & \TBacademicYears \\[0.1cm]
+    \end{tabular}
+    
+	\vfill
+    
+	\begin{flushright}
+		Yverdon-les-Bains, le \today
+	\end{flushright}
+}
+
+
+% +---------------------------------------------------------------+
+% | Page de garde (OLD de 2020)
+% +---------------------------------------------------------------+
+\newcommand{\TBmaketitleOLD}{
+	\thispagestyle{empty}
+
+	\begin{minipage}[t]{6cm}%
+		\vspace{0pt}%usefull to align top
+		\includegraphics[width=6cm]{template/HEIG-VD_logotype-baseline_rouge-cmjn.pdf}
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}[t]{12cm}%
+		\vspace{0pt}%usefull to align top
+		\small%
+		\begin{flushright}%
+			\TBdpt\\
+			\TBfiliere\\
+			
+			\TBorient
+		\end{flushright}
+	\end{minipage}
+
+	\vfill
+
+	\begin{center}        
+    {\large \bfseries Travail de Bachelor}
+    
+    \vspace{0.8cm}
+    
+    {\Huge \bfseries \TBtitle}
+
+	  \ifthenelse{\isempty{\TBsubtitle}}%
+ 			{empty}%empty
+	    {\Large \TBsubtitle}%not empty
+		
+		\ifisconfidential
+	    \vspace{0.8cm}    
+	    {\large \bfseries Confidentiel}
+	  \else
+		\fi      
+
+  \end{center}
+		
+	\vfill
+    
+    \normalsize
+    \begin{tabular}{l@{\hskip 10mm}l}
+    	\textbf{Étudiant} & \textbf{\TBauthor} \\[0.1cm]
+	    \textbf{Enseignant responsable} & \TBsupervisor \\[0.1cm]
+		  \ifthenelse{\isempty{\TBindustryName}}%
+    		{}%empty
+		    {\textbf{Entreprise mandante} & 
+		      \begin{minipage}[t]{8cm}%
+		    		\TBindustryContact\\
+						\TBindustryName\\
+						\TBindustryAddress\\
+					\end{minipage} \\[0.1cm]
+				}%not empty
+		\textbf{Année académique} & \TBacademicYears \\[0.1cm]
+    \end{tabular}
+    
+    \vspace{2.0cm}
+    
+	\begin{flushright}
+		Yverdon-les-Bains, le \today
+	\end{flushright}
+ }
+
+
+
+% +---------------------------------------------------------------+
+% | Page de résumé
+% +---------------------------------------------------------------+
+
+\newcommand{\TBsecondTitle}{
+
+  \begin{flushright}
+      \TBdpt\\
+      \TBfiliere\\
+      \TBorient\\
+      \TBauthor : \TBauthorData \\
+      \TBsupervisor : \TBsupervisorData\\
+  \end{flushright}
+  
+  \vspace{0.6cm}
+  
+  \begin{center}
+      {\large Travail de Bachelor \TBacademicYears \\[0.2cm]}
+      {\TBtitle \\[0.5cm]}
+  \end{center}
+  
+  \hrule
+  \vspace{0.5cm}
+  
+  {Nom de l'entreprise/institution}
+
+  \TBindustryName
+
+  \vspace{0.5cm}
+  
+  {\bfseries Résumé publiable}
+  
+  {\TBresumePubliable}
+
+  \vspace{0.5cm}  
+  
+  
+  \begin{tabular}{lll}
+      {\TBauthor} & Date et lieu : & Signature :  \\[0.3cm]
+      {\TBauthor} & .......................................... &  .......................................... \\[0.8cm]
+      Enseignant responsable : & Date et lieu : & Signature :  \\[0.3cm]
+  
+      {\TBsupervisor} & .......................................... &  .......................................... \\[0.8cm]
+      Nom de l'entreprise/institution : & Date et lieu : & Signature :  \\[0.3cm]
+  
+      {\TBindustryContact} & .......................................... &  .......................................... \\
+      {\TBindustryName}
+  \end{tabular}
+}
+
+\newcommand{\TBresume}{
+
+	\chapter{Résumé}
+
+  	
+	{\bf Travail de Bachelor \TBacademicYears}\\
+	{\textbf{Titre :} \TBtitle}\\
+	% Subtitle
+	\ifthenelse{\isempty{\TBsubtitle}}%
+ 		{}%empty
+		{\textbf{Sous-titre :} \TBsubtitle}%not empty
+		
+	\vspace{5mm}
+
+	{\TBresumePubliable}
+
+  	\vfill
+  
+	  \begin{tabular}{l@{\hskip 10mm}l}
+		% Etudiant
+    	\textbf{\TBauthor} & \textbf{\TBauthorData} \\[3mm]
+		% Supervieur
+	    \textbf{\TBsupervisor} & \TBsupervisorData \\[3mm]
+
+		% Faculté, département
+		%\textbf{\TBdpt} & \TBdptData \\
+		%\textbf{\TBfiliere} & \TBfiliereData \\
+		%\textbf{\TBorient} & \TBorientData \\[3mm]
+
+		% Mandant
+		\ifthenelse{\isempty{\TBindustryName}}%
+    	{}%empty
+		{\textbf{\TBindustryType} & \TBindustryName~(\TBindustryContact) \\[3mm] }%not empty
+    \end{tabular}
+}
+
+
+
+
+
+
+% +---------------------------------------------------------------+
+% | Preambule
+% +---------------------------------------------------------------+
+
+\newcommand{\TBpreambule}{
+
+  \chapter{Préambule}
+  
+  Ce travail de Bachelor (ci-après TB) est réalisé en fin de cursus d’études, en vue de l'obtention du titre de Bachelor of Science HES-SO en Ingénierie. \\
+  
+  En tant que travail académique, son contenu, sans préjuger de sa valeur, n'engage ni la responsabilité de l'auteur, ni celles du jury du travail de Bachelor et de l'Ecole. \\
+  
+  Toute utilisation, même partielle, de ce TB doit être faite dans le respect du droit d’auteur. \\
+    
+  \vspace{1cm}
+  \begin{flushright}
+      \begin{minipage}{7cm}
+          HEIG-VD \\
+          Le Chef de département TIC
+      \end{minipage}\hfill
+  \end{flushright}
+  
+  \vfill
+  
+  \noindent \LieuSignature, le \today
+}
+
+
+
+
+
+
+
+% +---------------------------------------------------------------+
+% | Authentification
+% +---------------------------------------------------------------+
+
+\newcommand{\TBauthentification}{
+
+  \chapter{Authentification}
+  
+Par la présente, j'atteste  avoir réalisé  ce travail et n’avoir utilisé aucune autre source que celles expressément mentionnées.
+
+\vspace{1cm}
+
+\begin{flushright}
+    \begin{minipage}{7cm}
+        {\TBauthorData}
+    \end{minipage}\hfill
+\end{flushright}
+
+\vfill
+
+\noindent {\LieuSignature}, le \today
+}

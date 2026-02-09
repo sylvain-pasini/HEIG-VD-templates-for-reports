@@ -77,11 +77,11 @@
   _title(config)
   if not config.global.research_report {
     import "_second_title.typ": *
-    _second_title(config)
-    include "_preambule.typ"
     import "_authentification.typ": *
     _authentification(config)
-
+    _second_title(config)
+    include "_preambule.typ"
+    
     /*
     Remerciements
     */

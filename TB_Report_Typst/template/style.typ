@@ -8,7 +8,7 @@
   show heading.where(
     level: 1
   ): it => [
-    #pagebreak(weak: true, to: "odd")
+    #pagebreak(weak: true, to: none)
     #v(2.5em)
     #it
     \
@@ -28,7 +28,7 @@
 
   let confidential_text = [
     #if config.global.confidential{
-      [*Confidentiel*]
+      [Confidentiel]
     }
   ]
 
@@ -37,31 +37,23 @@
     paper: "a4",
     numbering: "1",
     header: context{
-      if not isfirsttwopages(page){
-        if isevenpage(page){
-          columns(2, [
-            #align(left)[#smallcaps([#currentH()])]
-            #colbreak()
-            #align(right)[#confidential_text]
-          ])
-        } else {
-          columns(2, [
-            #align(left)[#confidential_text]
-            #colbreak()
-            #align(right)[#config.information.author.name]
-          ])
-        }
+      if not is-first-page(page){
+        columns(2, [
+          #align(left)[#smallcaps([#currentH()])]
+          #colbreak()
+          #align(right)[#config.information.author.name]
+        ])
         hr()
       }
     },
     footer: context{
-      if not isfirsttwopages(page){
+      if not is-first-page(page){
         hr()
-        if isevenpage(page){
-          align(left)[#counter(page).display()]
-        } else {
-          align(right)[#counter(page).display()]
-        }
+        columns(2, [
+          #align(left)[#smallcaps(confidential_text)]
+          #colbreak()
+          #align(right)[#counter(page).display()]
+        ])
       }
     },
     margin: (

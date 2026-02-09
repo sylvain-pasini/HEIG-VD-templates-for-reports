@@ -41,7 +41,9 @@
         industry_name: "EntrepriseZ",
       ),
       resume_publiable: [
-        Dans ce travail... Ceci est le résumé publiable...
+        #lorem(100)\
+        \
+        #lorem(50)
       ]
     ),
     sections: (

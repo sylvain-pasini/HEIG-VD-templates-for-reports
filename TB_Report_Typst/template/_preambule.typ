@@ -1,26 +1,30 @@
-#set par(leading: 0.55em, spacing: 0.55em, justify: true)
-= Préambule
+#let _preambule(config) = {
 
-Ce travail de Bachelor (ci-après TB) est réalisé en fin de cursus d'études, en vue de l'obtention du titre de Bachelor of Science HES-SO en Ingénierie.
+  set par(leading: 0.55em, spacing: 0.55em, justify: true)
 
-#v(4%)
+  [= Préambule
 
-En tant que travail académique, son contenu, sans préjuger de sa valeur, n'engage ni la responsabilité de l'auteur, ni celles du jury du travail de Bachelor et de l'Ecole.
+    Ce travail de Bachelor (ci-après TB) est réalisé en fin de cursus d'études, en vue de l'obtention du titre de Bachelor of Science HES-SO en Ingénierie.
 
-#v(4%)
+    #v(4%)
 
-Toute utilisation, même partielle, de ce TB doit être faite dans le respect du droit d'auteur.
+    En tant que travail académique, son contenu, sans préjuger de sa valeur, n'engage ni la responsabilité de l'auteur, ni celles du jury du travail de Bachelor et de l'Ecole.
 
-#v(10%)
+    #v(4%)
 
-#table(
-  stroke: none,
-  columns: (50%, 50%),
-  [], [HEIG-VD],
-  [], [#v(10%)],
-  [], [Vincent Peiris\ Chef de département TIC]
-)
+    Toute utilisation, même partielle, de ce TB doit être faite dans le respect du droit d'auteur.
 
-#align(bottom + left, [
-  Yverdon-les-Bains, le #datetime.today().display("[day].[month].[year]")
-])
+    #v(10%)
+
+    #table(
+      stroke: none,
+      columns: (60%, 40%),
+      [], [HEIG-VD],
+      [], [Le Chef de département #config.information.departement.court]
+    )
+
+    #align(bottom + left, [
+      Yverdon-les-Bains, le #datetime.today().display("[day].[month].[year]")
+    ])
+  ]
+}

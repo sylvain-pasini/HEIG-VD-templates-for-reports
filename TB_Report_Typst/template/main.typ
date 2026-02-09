@@ -79,9 +79,12 @@
     import "_second_title.typ": *
     import "_authentification.typ": *
     _authentification(config)
-    _second_title(config)
-    include "_preambule.typ"
-    
+    import "_preambule.typ": *
+    _preambule(config)
+   import "_resume.typ": *
+   _resume(config)
+
+
     /*
     Remerciements
     */

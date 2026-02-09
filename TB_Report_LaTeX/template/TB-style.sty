@@ -21,7 +21,8 @@
 
 % Images and colors
 \usepackage{graphicx,color}
-%\usepackage{xcolor} % Pour gérer les couleurs personnalisées
+\usepackage{xcolor} % Pour gérer les couleurs personnalisées
+\usepackage{float} % pour [H]
 
 % to print url
 \usepackage{url}
@@ -96,6 +97,8 @@
 % | Gantt
 % +---------------------------------------------------------------+
 \usepackage{pgfgantt} %for Gantt
+\usepackage{tikz}
+
 \makeatletter
 \def\pgfcalendarmonthnamefrench#1{%
 \ifcase#1\or Janvier\or Février\or Mars\or Avril\or Mai\or Juin\or
@@ -115,7 +118,7 @@ Juillet\or Août\or Septembre\or Octobre\or Novembre\or Décembre\fi}
 %4 Top margin
 \setlength{\topmargin}{6mm}
 %5 head height
-\setlength{\headheight}{12pt}
+\setlength{\headheight}{14pt}
 %6 head sep
 \setlength{\headsep}{15mm}
 %7 Text height

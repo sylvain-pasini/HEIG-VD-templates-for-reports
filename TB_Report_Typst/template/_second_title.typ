@@ -4,9 +4,9 @@
   set par(leading: 0.55em, spacing: 0.55em, justify: true)
   pagebreak(to: "odd")
   align(right)[
-    #config.information.dpt\
+    #config.information.departement.long\
     #config.information.filiere.long\
-    #config.information.orientation\
+    #config.information.orientation.long\
     #if config.information.author.feminine_form { "Étudiante" } else { "Étudiant" } : #config.information.author.name\
     #if config.information.supervisor.feminine_form { "Enseignante" } else { "Enseignant" } responsable : #config.information.supervisor.name\
   ]

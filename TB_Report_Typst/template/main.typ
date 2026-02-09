@@ -10,12 +10,18 @@
       title: "",
       subtitle: "",
       academic_years: "",
-      dpt: "",
+      departement: (
+        court: "",
+        long: ""
+      ),
       filiere: (
-        short: "",
+        court: "",
         long: "",
       ),
-      orientation: "",
+      orientation: (
+        court: "",
+        long: ""
+      ),
       author: (
         name: "",
         feminine_form: false,
@@ -146,7 +152,7 @@
       title: "",
       subtitle: "",
       academic_years: "",
-      dpt: "",
+      departement: "",
       filiere: (
         short: "",
         long: "",

@@ -9,15 +9,21 @@
       text_lang: "fr"
     ),
     information: (
-      title: "Titre du TB",
-      subtitle: "Sous-titre",
-      academic_years: "2024-25",
-      dpt: "Département des Technologies de l'information et de la communication (TIC)",
-      filiere: (
-        short: "ISC",
-        long: "Informatique et systèmes de communication",
+      title: "Exemple de titre",
+      subtitle: "Exemple de sous-titre",
+      academic_years: "2025-26",
+      departement: (
+        court: "TIC",
+        long: "Technologies de l'information et de la communication (TIC)",
       ),
-      orientation: "Sécurité informatique",
+      filiere: (
+        court: "ISC",
+        long: "Informatique et systèmes de communication (ISC)",
+      ),
+      orientation: (
+        court: "ISC-S",
+        long: "Sécurité informatique (ISC-S)",
+      ),
       author: (
         name: "firstname lastname",
         feminine_form: true,

@@ -10,12 +10,18 @@
     ),
     information: (
       title: "Titre du TB", 
-      dpt: "ISC",
+      departement: (
+        court: "TIC",
+        long: "Technologies de l'information et de la communication",
+      ),
       filiere: (
-        short: "ISC",
+        court: "ISC",
         long: "Informatique et systèmes de communication",
       ),
-      orientation: "ISCS",
+      orientation: (
+        court: "ISCS",
+        long: "Sécurité informatique",
+      ),
       author: (
         name: "firstname lastname",
         feminine_form: true,

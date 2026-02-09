@@ -46,11 +46,7 @@
         #lorem(50)
       ]
     ),
-    sections: (
-      thanks: include "chapters/thanks.typ",
-      cdc: include "chapters/cdc.typ",
-      annexes: include "chapters/annexes.typ"
-    ),
+    cahier-des-charges: include "chapters/cdc.typ",
     bibliography: (
       content: read("bibliography.bib", encoding: none),
       style: "iso-690-author-date"

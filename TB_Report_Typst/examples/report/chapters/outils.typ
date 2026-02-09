@@ -1,2 +1,2 @@
-= Outils utilisés <tools>
+= Outils utilisés <outils>
 #lorem(100)

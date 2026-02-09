@@ -37,11 +37,7 @@
       ),
       resume_publiable: none,
     ),
-    sections: (
-      thanks: none,
-      cdc: none,
-      annexes: none,
-    ),
+    cahier-des-charges: none,
     bibliography: (
       content: none,
       style: "iso-690-author-date",
@@ -75,30 +71,14 @@
   Title and   */
   import "_title.typ": *
   _title(config)
-  if not config.global.research_report {
-    import "_second_title.typ": *
-    import "_authentification.typ": *
-    _authentification(config)
-    import "_preambule.typ": *
-    _preambule(config)
-   import "_resume.typ": *
-   _resume(config)
+  import "_authentification.typ": *
+  _authentification(config)
+  import "_preambule.typ": *
+  _preambule(config)
+  import "_resume.typ": *
+  _resume(config)
 
-
-    /*
-    Remerciements
-    */
-    if config.sections.thanks != none {
-      config.sections.thanks
-    }
-
-    /*
-    Cahier des charges
-    */
-    if config.sections.cdc != none {
-      config.sections.cdc
-    }
-  }
+  config.cahier-des-charges
 
   // Set numbering for content
   set heading(numbering: "1.1")
@@ -115,13 +95,6 @@
 
   // Remove numbering after content
   set heading(numbering: none)
-
-  /*
-  Annexes
-  */
-  if config.sections.annexes != none {
-    config.sections.annexes
-  }
 
   /*
   Tables
@@ -143,6 +116,13 @@
     _glossary(config)
   }
 }
+
+
+
+
+
+
+
 
 #let TB_affiche(
   content, 

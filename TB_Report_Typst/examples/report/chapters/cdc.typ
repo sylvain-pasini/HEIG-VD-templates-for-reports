@@ -1,21 +1,18 @@
 = Cahier des charges <cahier-des-charges>
+
 == Résumé du problème <résumé-du-problème>
-#lorem(50)
+#lorem(100)\
+\
+#lorem(100)
 
 === Problématique <problématique>
-#lorem(110)
-
-=== Solutions existantes <solutions-existantes>
-#lorem(110)
-
-=== Solutions possibles <solutions-possibles>
-#lorem(10)
+#lorem(50)
 
 == Cahier des charges <cahier-des-charges-1>
-#lorem(10)
+#lorem(100)
 
 === Objectifs <objectifs>
-#lorem(10)
+#lorem(150)
 
 === Déroulement <déroulement>
 Le travail commence le ... et se termine le .... Sur les 16 premières semaines, soit du x au y, la charge de travail représente 12h par semaine. Les 6 dernières semaines, soit du x au y, ce travail sera réalisé à plein temps.
@@ -23,6 +20,9 @@ Le travail commence le ... et se termine le .... Sur les 16 premières semaines,
 Un rendu intermédiaire noté est demandé le x et le rendu final est prévu pour le x à 12h00.
 
 La défense sera organisée entre le x et le y.
+
+=== Tâches <taches>
+#lorem(150)
 
 === Livrables <livrables>
 Les délivrables seront les suivants :

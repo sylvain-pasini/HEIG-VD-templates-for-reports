@@ -1,2 +1,2 @@
-= État de l'art <etatdelart>
+= État de l'art <etat-de-lart>
 #lorem(100)

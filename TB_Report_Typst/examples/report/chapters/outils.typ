@@ -1,2 +1,4 @@
 = Outils utilisés <outils>
-#lorem(100)
+#lorem(400)
+
+== Planification initiale <planification-initiale>

@@ -46,7 +46,7 @@
         #lorem(50)
       ]
     ),
-    cahier-des-charges: include "chapters/cdc.typ",
+    cahier-des-charges: include "chapters/cahier-des-charges.typ",
     bibliography: (
       content: read("bibliography.bib", encoding: none),
       style: "iso-690-author-date"
@@ -62,11 +62,9 @@
 )
 
 #include "chapters/introduction.typ"
-
-#include "chapters/planification.typ"
-
 #include "chapters/etat-de-lart.typ"
+#include "chapters/exemple-de-chapitre.typ"
 #include "chapters/architecture.typ"
 #include "chapters/implementation.typ"
-
+#include "chapters/resultats.typ"
 #include "chapters/conclusion.typ"

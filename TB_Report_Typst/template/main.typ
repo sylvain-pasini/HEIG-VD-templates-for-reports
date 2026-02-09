@@ -86,7 +86,7 @@
   /*
   Table of Content
   */
-  outline(title: "Table des matières", depth: 3, indent: 15pt)
+  outline(title: "Table des matières", depth: 2, indent: 15pt)
 
   /*
   Content

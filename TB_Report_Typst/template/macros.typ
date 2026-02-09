@@ -23,6 +23,11 @@
   pageNumber == 1 or pageNumber == 2
 }
 
+#let is-first-page(page) = {
+  let pageNumber = counter(page).get().first()
+  pageNumber == 1
+}
+
 #let hr(width: 100%) = {
   line(length: width, stroke: (thickness: 0.5pt))
 }

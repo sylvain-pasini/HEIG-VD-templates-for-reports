@@ -8,7 +8,7 @@ Par la présente, j’atteste avoir réalisé ce travail et n’avoir utilisé a
 
 #table(
   stroke: none,
-  columns: (70%, 30%),
+  columns: (60%, 40%),
   [], [#config.information.author.name]
 )
 

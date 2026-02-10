@@ -39,4 +39,6 @@ Pour installer Pygmentize sur macOS, suivre les étapes suivantes :
 
 ## Template Typst
 
-En 2025, Christophe Roulin, alors étudiant Bachelor à la HEIG-VD, a créé une version **Typst** du template pour les rapports. Ce template s’inspire directement de la mise en forme et du contenu du template LaTeX original, conçu par le Prof. Sylvain Pasini, et offre une alternative moderne et simplifiée pour la rédaction scientifique.
+En 2025, Christophe Roulin, alors étudiant Bachelor à la HEIG-VD, a créé une version **Typst** du template pour les rapports. Ce template s’inspire directement de la mise en forme et du contenu du template LaTeX original, conçu par le Prof. Sylvain Pasini, et offre une alternative moderne et simplifiée pour la rédaction scientifique: https://github.com/DACC4/HEIG-VD-typst-template-for-TB.
+
+En février 2026, le code de ce template Typst a été utilisé pour créer une version à la structure simplifiée (visant à faciliter la prise en main pour les étudiants n'ayant pas d'expérience sur Typst), intégrée à ce dépôt.

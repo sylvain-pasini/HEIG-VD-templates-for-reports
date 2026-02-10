@@ -1,13 +1,10 @@
-#import "glossary.typ": *
-#import "../../template/main.typ": *
+#let config = (
 
-#show: TB_template.with(
-  config: (
     global: (
       confidential: true,
-      research_report: false,
       text_lang: "fr"
     ),
+
     information: (
       title: "Exemple de titre",
       subtitle: "Exemple de sous-titre",
@@ -46,26 +43,9 @@
         #lorem(50)
       ]
     ),
-    cahier-des-charges: include "chapters/cahier-des-charges.typ",
+
     bibliography: (
       content: read("bibliography.yaml", encoding: none),
       style: "ieee"
     ),
-    codly: (
-      enabled: true
-    ),
-    glossary: (
-      enabled: true,
-      entries: entry-list
-    )
   )
-)
-
-#include "chapters/introduction.typ"
-#include "chapters/planification.typ"
-#include "chapters/etat-de-lart.typ"
-#include "chapters/exemple-de-chapitre.typ"
-#include "chapters/architecture.typ"
-#include "chapters/implementation.typ"
-#include "chapters/resultats.typ"
-#include "chapters/conclusion.typ"

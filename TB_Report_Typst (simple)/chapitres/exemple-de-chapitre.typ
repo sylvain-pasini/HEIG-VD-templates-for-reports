@@ -22,32 +22,28 @@ Voici comment mettre une image.
 
 == Créer et citer une référence bibliographique
 
-Ceci est un exemple de citation d'un livre de Pasini @ajop15
-
+Ceci est un exemple de citation d'un livre de Pasini @ajop15\
+\
 Mais aussi le site de Black Alps 2019 @pas19
 
 == Créer une référence à une autre partie du document
 
-On peut aussi ajouter une référence à la section @inclure-du-code[]
-
-On peut aussi ajouter une référence à l’introduction, @introduction.
-
+On peut aussi ajouter une référence à la section @inclure-du-code[]\
+\
+On peut aussi ajouter une référence à l’introduction, @introduction.\
+\
 Comme montre la @pgp, on peut référencer une figure.
-
 
 == Afficher une commande simple ou du bash
 
-Utiliser la commande `com`.
-
-Exemple : Test d’une commande bash shell `ls` :
-
-Utiliser l’environnement `shellcmd`.
+Exemple : Test d’une commande bash shell `ls` :\
+\
 
 ```sh
 $> ls -al test_underscore $$* "coucou"
 ```
 
-== Inclure du code dans le latex <inclure-du-code>
+== Inclure du code <inclure-du-code>
 
 ```C
 #include <stdio.h>

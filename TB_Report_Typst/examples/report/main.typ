@@ -48,8 +48,8 @@
     ),
     cahier-des-charges: include "chapters/cahier-des-charges.typ",
     bibliography: (
-      content: read("bibliography.bib", encoding: none),
-      style: "iso-690-author-date"
+      content: read("bibliography.yaml", encoding: none),
+      style: "ieee"
     ),
     codly: (
       enabled: true
@@ -62,6 +62,7 @@
 )
 
 #include "chapters/introduction.typ"
+#include "chapters/planification.typ"
 #include "chapters/etat-de-lart.typ"
 #include "chapters/exemple-de-chapitre.typ"
 #include "chapters/architecture.typ"

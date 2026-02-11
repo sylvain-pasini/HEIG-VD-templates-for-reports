@@ -41,4 +41,18 @@ Pour installer Pygmentize sur macOS, suivre les étapes suivantes :
 
 En 2025, Christophe Roulin, alors étudiant Bachelor à la HEIG-VD, a créé une version **Typst** du template pour les rapports. Ce template s’inspire directement de la mise en forme et du contenu du template LaTeX original, conçu par le Prof. Sylvain Pasini, et offre une alternative moderne et simplifiée pour la rédaction scientifique: https://github.com/DACC4/HEIG-VD-typst-template-for-TB.
 
-En février 2026, le code de ce template Typst a été utilisé pour créer une version à la structure simplifiée (visant à faciliter la prise en main pour les étudiants n'ayant pas d'expérience sur Typst), intégrée à ce dépôt.
+En février 2026, le code de ce template Typst a été utilisé pour créer une version à la structure simplifiée (visant à faciliter la prise en main) et dont le format a été légèrement mis à jour pour refléter les changements effectués sur le template LaTeX.
+
+## Utilisation générale
+
+1. Editer le fichier `config.typ` pour y définir les différentes variables du document.
+2. Editer ou créer les différents chapitres (et annexes), sous forme de fichiers individuels dans le répertoire `chapitres`.
+3. Inrégrer les chapitres/annexes souhaités dans la section *corps du rapport* ou *anenxes* du fichier `tb_report.typ`.
+4. Compiler le document (voir ci-dessous) pour produire le fichier `tb_report.pdf`
+
+### Compilation du PDF à partir du Typst
+
+```sh
+$ cd "TB_Report_Typst (simple)"
+$ typst compile tb_rapport.typ 
+```

@@ -284,6 +284,12 @@ Toute utilisation, même partielle, de ce TB doit être faite dans le respect du
 // Set numbering for content
 #set heading(numbering: "1.1")
 
+/*
+| ------------------------------------
+| INSEREZ VOS CHAPITRES CI-DESSOUS
+| ------------------------------------
+*/
+
 #include "chapitres/introduction.typ"
 #include "chapitres/planification.typ"
 #include "chapitres/etat-de-lart.typ"
@@ -292,6 +298,8 @@ Toute utilisation, même partielle, de ce TB doit être faite dans le respect du
 #include "chapitres/implementation.typ"
 #include "chapitres/resultats.typ"
 #include "chapitres/conclusion.typ"
+
+// ------------------------------------
 
 // Remove numbering after content
 #set heading(numbering: none)
@@ -352,7 +360,14 @@ Toute utilisation, même partielle, de ce TB doit être faite dans le respect du
 #counter(heading).update(0)
 #set heading(numbering: "I.i")
 
-#include "chapitres/outils-utilises.typ"
+/*
+| ------------------------------------
+| INSEREZ VOS ANNEXES CI-DESSOUS
+| ------------------------------------
+*/
 
+#include "chapitres/outils-utilises.typ"
 #set page(flipped: true)
 #include "chapitres/journal-de-travail.typ"
+
+// ------------------------------------

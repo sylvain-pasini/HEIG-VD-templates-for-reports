@@ -1,18 +1,17 @@
 # Whether or not to show today as a 'milestone' on the gantt chart.
-show-today: true
+show-today: false
+
 headers:
   - month
 # A start date. Not required.
-start: 2026-02-16
+start: 2026-02-01
 # An end date. Not required.
 end: 2026-09-30
 # A list of tasks
 tasks:
     # The name of the task.
   - name: Démarrage
-
     subtasks:
-
       - name: "Documents administratifs"
         start: 2026-02-16
         end: 2026-02-27
@@ -26,20 +25,18 @@ tasks:
         end: 2026-03-13
 
   - name: Etat de l'art
-
     subtasks:
       - name: Recherche
         start: 2026-03-02
         end: 2026-03-06
 
 milestones:
-
   - name: Kick-off
     date: 2026-02-16
     # Optional: whether or not the date should be shown in this milestone
     show-date: true 
 
   - name: CdC final
-    date: 2026-04-16
+    date: 2026-04-01
     # Optional: whether or not the date should be shown in this milestone
     show-date: true 

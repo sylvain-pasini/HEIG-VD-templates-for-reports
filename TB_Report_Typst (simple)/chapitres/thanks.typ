@@ -1,2 +1,0 @@
-= Remerciements
-#lorem(100)

@@ -4,8 +4,7 @@
 
 == Planification initiale <planification-initiale>
 
-Un exemple de planification et de Gantt utilisant la bibliothèque #link("https://typst.app/universe/package/gantty/")[gantty]. D’autres moyens sont possibles.
-\
+Un exemple de planification et de Gantt utilisant la bibliothèque #link("https://typst.app/universe/package/gantty/")[gantty].\
 \
 Dates clés administratives :
 
@@ -20,7 +19,7 @@ Dates clés administratives :
 
 #v(5%)
 #figure(
-  gantt(yaml("planification-initiale-gantt.yaml")),
+  gantt(yaml("planification-gantt.yaml")),
   caption: [
-    Planification du projet
+    Planification initiale du projet
   ])<gantt>

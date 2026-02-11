@@ -1,3 +1,14 @@
+/*
+|              ██         
+| ████▄ ▄███▄ ▀██▀▀ ▄█▀█▄ 
+| ██ ██ ██ ██  ██   ██▄█▀ 
+| ██ ██ ▀███▀  ██   ▀█▄▄▄ 
+| 
+| Ce fichier est basé sur du code précédemment écrit par @DACC4 et @samuelroland.
+| Dépot original: https://github.com/DACC4/HEIG-VD-typst-template-for-TB
+| 
+*/
+
 #let alignedpage() = [
   #pagebreak(weak: true, to: "odd")
 ]
@@ -13,19 +24,13 @@
   #pagebreak(weak: true)
 ]
 
-#let isevenpage(page) = {
-  calc.even(counter(page).get().first())
-}
-
-#let isfirsttwopages(page) = {
-  let pageNumber = counter(page).get().first()
-
-  pageNumber == 1 or pageNumber == 2
-}
-
 #let is-first-page(page) = {
   let pageNumber = counter(page).get().first()
   pageNumber == 1
+}
+
+#let is-title-page(page) = {
+  query(heading.where(level: 1)).any(it => it.location().page() == here().page())
 }
 
 #let hr(width: 100%) = {
@@ -47,4 +52,9 @@
     }
   }
   return ""
+}
+
+#let annex(body) = {
+  set heading(numbering: "A", supplement: [Annexe])
+  body
 }

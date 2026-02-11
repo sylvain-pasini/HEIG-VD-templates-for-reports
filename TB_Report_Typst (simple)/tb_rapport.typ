@@ -1,3 +1,14 @@
+/*
+|              ██         
+| ████▄ ▄███▄ ▀██▀▀ ▄█▀█▄ 
+| ██ ██ ██ ██  ██   ██▄█▀ 
+| ██ ██ ▀███▀  ██   ▀█▄▄▄ 
+| 
+| Ce fichier est basé sur du code précédemment écrit par @DACC4 et @samuelroland.
+| Dépot original: https://github.com/DACC4/HEIG-VD-typst-template-for-TB
+| 
+*/
+
 #import "macros.typ": *
 #import "config.typ": *
 #import "@preview/codly:1.3.0": *
@@ -49,7 +60,7 @@
   paper: "a4",
   numbering: "1",
   header: context{
-    if not is-first-page(page){
+    if (not is-first-page(page)) and (not is-title-page(page)) {
       columns(2, [
         #align(left)[#smallcaps([#currentH()])]
         #colbreak()
@@ -59,7 +70,7 @@
     }
   },
   footer: context{
-    if not isfirsttwopages(page){
+    if not is-first-page(page){
       hr()
       columns(2, [
         #align(left)[#smallcaps(confidential_text)]
@@ -145,7 +156,7 @@
 #align(bottom + right, [
   Yverdon-les-Bains, le #datetime.today().display("[day].[month].[year]")
 ])
-#pagebreak()
+#pagebreak(weak: true)
 
 /*
                   ▄▄                           ▄▄                                       
@@ -169,7 +180,7 @@ Par la présente, j’atteste avoir réalisé ce travail et n’avoir utilisé a
 #align(left + bottom, [
     Yverdon-les-Bains, le #datetime.today().display("[day].[month].[year]")
   ])
-#pagebreak()
+#pagebreak(weak: true)
 
 /*    
                ▄                 ▄▄          ▄▄       
@@ -205,7 +216,7 @@ Toute utilisation, même partielle, de ce TB doit être faite dans le respect du
 #align(bottom + left, [
   Yverdon-les-Bains, le #datetime.today().display("[day].[month].[year]")
 ])
-#pagebreak()
+#pagebreak(weak: true)
 
 /*
          ▄                          ▄  
@@ -242,20 +253,36 @@ Toute utilisation, même partielle, de ce TB doit être faite dans le respect du
     ]
   )
 ])
-#pagebreak()
+#pagebreak(weak: true)
 
+/*                                                                                
+            ▄▄                         ▄▄                     ▄▄                                  
+            ██    ▀▀                   ██                     ██                                  
+▄████  ▀▀█▄ ████▄ ██  ▄█▀█▄ ████▄   ▄████ ▄█▀█▄ ▄█▀▀▀   ▄████ ████▄  ▀▀█▄ ████▄ ▄████ ▄█▀█▄ ▄█▀▀▀ 
+██    ▄█▀██ ██ ██ ██  ██▄█▀ ██ ▀▀   ██ ██ ██▄█▀ ▀███▄   ██    ██ ██ ▄█▀██ ██ ▀▀ ██ ██ ██▄█▀ ▀███▄ 
+▀████ ▀█▄██ ██ ██ ██▄ ▀█▄▄▄ ██      ▀████ ▀█▄▄▄ ▄▄▄█▀   ▀████ ██ ██ ▀█▄██ ██    ▀████ ▀█▄▄▄ ▄▄▄█▀ 
+                                                                                   ██             
+                                                                                 ▀▀▀              
+*/
 
 #include "chapitres/cahier-des-charges.typ"
 
-// Set numbering for content
-#set heading(numbering: "1.1")
 
-/*
-Table of Content
-*/
 #outline(title: "Table des matières", depth: 2, indent: 15pt)
 
+/*                                                 
+                                   ▄▄                                                   
+                                   ██                                              ██   
+▄████ ▄███▄ ████▄ ████▄ ▄█▀▀▀   ▄████ ██ ██   ████▄  ▀▀█▄ ████▄ ████▄ ▄███▄ ████▄ ▀██▀▀ 
+██    ██ ██ ██ ▀▀ ██ ██ ▀███▄   ██ ██ ██ ██   ██ ▀▀ ▄█▀██ ██ ██ ██ ██ ██ ██ ██ ▀▀  ██   
+▀████ ▀███▀ ██    ████▀ ▄▄▄█▀   ▀████ ▀██▀█   ██    ▀█▄██ ████▀ ████▀ ▀███▀ ██     ██   
+                  ██                                      ██    ██                      
+                  ▀▀                                      ▀▀    ▀▀                      
+*/
 
+
+// Set numbering for content
+#set heading(numbering: "1.1")
 
 #include "chapitres/introduction.typ"
 #include "chapitres/planification.typ"
@@ -266,35 +293,66 @@ Table of Content
 #include "chapitres/resultats.typ"
 #include "chapitres/conclusion.typ"
 
-
-
-
 // Remove numbering after content
 #set heading(numbering: none)
 
-/*
-Tables
+/*   
+▄▄        ▄▄    ▄▄                                   ▄▄              
+██    ▀▀  ██    ██ ▀▀                                ██    ▀▀        
+████▄ ██  ████▄ ██ ██  ▄███▄ ▄████ ████▄  ▀▀█▄ ████▄ ████▄ ██  ▄█▀█▄ 
+██ ██ ██  ██ ██ ██ ██  ██ ██ ██ ██ ██ ▀▀ ▄█▀██ ██ ██ ██ ██ ██  ██▄█▀ 
+████▀ ██▄ ████▀ ██ ██▄ ▀███▀ ▀████ ██    ▀█▄██ ████▀ ██ ██ ██▄ ▀█▄▄▄ 
+                                ██             ██                    
+                              ▀▀▀              ▀▀                    
 */
+
 #if config.bibliography.content != none {
   bibliography(config.bibliography.content, style: config.bibliography.style)
 }
 
+/*           
+           ▄▄    ▄▄            ▄▄                 ▄▄                                   
+ ██        ██    ██            ██                ██  ▀▀                                
+▀██▀▀ ▀▀█▄ ████▄ ██ ▄█▀█▄   ▄████ ▄█▀█▄ ▄█▀▀▀   ▀██▀ ██  ▄████ ██ ██ ████▄ ▄█▀█▄ ▄█▀▀▀ 
+ ██  ▄█▀██ ██ ██ ██ ██▄█▀   ██ ██ ██▄█▀ ▀███▄    ██  ██  ██ ██ ██ ██ ██ ▀▀ ██▄█▀ ▀███▄ 
+ ██  ▀█▄██ ████▀ ██ ▀█▄▄▄   ▀████ ▀█▄▄▄ ▄▄▄█▀    ██  ██▄ ▀████ ▀██▀█ ██    ▀█▄▄▄ ▄▄▄█▀ 
+                                                            ██                         
+                                                          ▀▀▀                          
+*/
+
 #context {
   let figures = query(figure.where(kind: image))
   if figures.len() != 0 {
-    outline(title: "Figures", target: figure.where(kind: image))
+    outline(title: "Table des figures", target: figure.where(kind: image))
   }
 }
+
+/*
+▄▄                            ▄▄                          ▄▄    ▄▄                         
+██ ▀▀         ██              ██                ██        ██    ██                         
+██ ██  ▄█▀▀▀ ▀██▀▀ ▄█▀█▄   ▄████ ▄█▀█▄ ▄█▀▀▀   ▀██▀▀ ▀▀█▄ ████▄ ██ ▄█▀█▄  ▀▀█▄ ██ ██ ██ ██ 
+██ ██  ▀███▄  ██   ██▄█▀   ██ ██ ██▄█▀ ▀███▄    ██  ▄█▀██ ██ ██ ██ ██▄█▀ ▄█▀██ ██ ██  ███  
+██ ██▄ ▄▄▄█▀  ██   ▀█▄▄▄   ▀████ ▀█▄▄▄ ▄▄▄█▀    ██  ▀█▄██ ████▀ ██ ▀█▄▄▄ ▀█▄██ ▀██▀█ ██ ██ 
+*/
 
 #context {
   let tables = query(figure.where(kind: table))
   if tables.len() != 0 {
-    outline(title: "Tables", target: figure.where(kind: table))
+    outline(title: "Liste des tableaux", target: figure.where(kind: table))
   }
 }
 
+/*
+ ▀▀█▄ ████▄ ████▄ ▄█▀█▄ ██ ██ ▄█▀█▄ ▄█▀▀▀ 
+▄█▀██ ██ ██ ██ ██ ██▄█▀  ███  ██▄█▀ ▀███▄ 
+▀█▄██ ██ ██ ██ ██ ▀█▄▄▄ ██ ██ ▀█▄▄▄ ▄▄▄█▀ 
+*/
 
+#fullpage([= Annexes])
+#counter(heading).update(0)
+#set heading(numbering: "I.i")
 
+#include "chapitres/outils-utilises.typ"
 
-
-
+#set page(flipped: true)
+#include "chapitres/journal-de-travail.typ"

@@ -1,3 +1,14 @@
+/*
+|              ██         
+| ████▄ ▄███▄ ▀██▀▀ ▄█▀█▄ 
+| ██ ██ ██ ██  ██   ██▄█▀ 
+| ██ ██ ▀███▀  ██   ▀█▄▄▄ 
+| 
+| Ce fichier est basé sur du code précédemment écrit par @DACC4 et @samuelroland.
+| Dépot original: https://github.com/DACC4/HEIG-VD-typst-template-for-TB
+| 
+*/
+
 #let config = (
 
     global: (
@@ -43,7 +54,6 @@
         #lorem(50)
       ]
     ),
-
     bibliography: (
       content: read("bibliography.yaml", encoding: none),
       style: "ieee"

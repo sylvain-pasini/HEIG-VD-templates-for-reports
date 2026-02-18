@@ -246,7 +246,7 @@ Toute utilisation, même partielle, de ce TB doit être faite dans le respect du
         columns: (35%, 65%),
         [*#if config.information.author.feminine_form { "Étudiante" } else { "Étudiant" }*], [*#config.information.author.name*],
         [],[],
-        [*#if config.information.supervisor.feminine_form { "Superviseur" } else { "Superviseure" }*], [#config.information.supervisor.name],
+        [*#if config.information.supervisor.feminine_form { "Superviseure" } else { "Superviseur" }*], [#config.information.supervisor.name],
         [],[],
         [*Entreprise mandante*], [#config.information.industry_contact.name],
       )

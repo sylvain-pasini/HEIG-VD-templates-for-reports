@@ -1,6 +1,9 @@
-# Template pour rapports
+# Templates pour rapports HEIG-VD et HES-SO
 
-Ce template a été conçu pour faciliter la rédaction de rapports, comme par exemple le rapport de Travail de Bachelor (TB) pour les étudiants de la HEIG-VD.
+Ce template a été conçu pour faciliter la rédaction de rapports, comme par exemple :
+
+- le rapport de Travail de Bachelor (TB) pour les étudiants de la [HEIG-VD](https://heig-vd.ch).
+- le rapport de Thèse de Master (TM) pour les étudiants du [Master of Science in Engineering (MSE)](https://www.hes-so.ch/master/hes-so-master/formations/engineering) de la HES-SO.
 
 L’objectif est de fournir un cadre simple et **prêt à l’emploi**, afin d’aider et d’encourager les étudiants à produire des documents scientifiques de qualité.
 
